@@ -216,9 +216,9 @@
                                                    <a href="{% url 'product_detail' product.id %}" target="_blank"><h5>{{product.name}} </h5></a>
                                                 </div>
                                                 <div class="prdc_ctg_product_price mt-1 product_price">
+                                                  <del>${{product.price}}</del> 
+                                                   {% if product.price_new%}
                                                    <span class="sale_price pe-1">${{product.price_new}}</span>
-                                                   {% if product.price%}
-                                                   <del>${{product.price}}</del>
                                                    {% endif %}
                                                 </div>
                                              </div>
