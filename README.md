@@ -7,6 +7,7 @@ Live website - http://mvp.3003.uz/
 Main Page
 <img src="/media/img1.jpg">
 <hr>
+Product Detail
 <img src="/media/img2.jpg">
 <hr>
 Installation
