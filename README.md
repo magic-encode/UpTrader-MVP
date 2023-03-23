@@ -1,7 +1,7 @@
 # UpTrader-MVP
 MVP app of UpTrader
 
-Sourcode and Resources for MyShop Products
+Sourcode and Resources for Shop Products
 Live website - http://mvp.3003.uz/
 <hr>
 Main Page
