@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Food E-commerce HTML Template</title>
+   <!-- favicon icon -->
+   <link rel="shortcut icon" href="/static/assets/images/icons/favicon.ico" type="image/x-icon">
+
+   <!-- Include fontawesome CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <!-- Include google fonts CDN -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet">
+
+   <!-- Include bootstrap CSS -->
+   <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+
+   <!-- Include aos CSS -->
+   <link rel="stylesheet" href="/static/assets/css/aos.css">
+
+   <!-- Include magnific-popup CSS -->
+   <link rel="stylesheet" href="/static/assets/css/magnific-popup.css">
+
+   <!-- Include nice-select CSS -->
+   <link rel="stylesheet" href="/static/assets/css/nice-select.css">
+
+   <!-- Include slick-theme CSS -->
+   <link rel="stylesheet" href="/static/assets/css/slick-theme.css">
+
+   <!-- Include slick CSS -->
+   <link rel="stylesheet" href="/static/assets/css/slick.css">
+
+   <!-- Include stylesheet CSS -->
+   <link rel="stylesheet" href="/static/assets/css/style.css">
+
+</head>
+
+<body>
+   <!-- body wrap start -->
+   <div class="body-wrap overflow-hidden">
+      <!-- back-to-top start -->
+      <div class="backtotop">
+         <a href="index.html#!" class="scroll">
+            <i class="fas fa-arrow-up fw-bold"></i>
+         </a>
+      </div>
+      <!-- back-to-top end -->
+
+      <!-- main body start -->
+      <main>
+         
+         {% block content %}
+         <!-- banner section start -->
+         <section class="banner_section_main position-relative">
+            <div class="banner_section_item sec_space_xxxlarge d-flex justify-content-center align-items-center"
+               style="background-image: url(/static/assets/images/banner/banner1.png)">
+               <div class="container">
+                  <div class="row text-center">
+                     <div class="col banner_content">
+                        <div class="banner_sub_title position-relative">
+                           <h6 class="position-absolute text-white text-uppercase">100% Organic Foods</h6>
+                           <img class="sub_title_bg" src="/static/assets/images/shapes/shape2.png" alt="image_not_found">
+                        </div>
+                        <div class="banner_title m-auto">
+                           <h1>Organic <font class="first">Veggies & Foods</font> You Cook<font class="text-effect">
+                                 <span>H</span><span>e</span><span>a</span><span>l</span><span>t</span><span>h</span><span>y</span>
+                              </font>
+                           </h1>
+                        </div>
+                        <div class="banner_search_bar d-inline-block position-relative">
+                           <form action="{% url 'home_page' %}" method="GET" >
+                              <input class="d-inline-block rounded-pill border-0 shadow py-3 px-5" type="text"
+                                 id="exampleFormControlInput1" placeholder="Search Product...." name="search_query" >
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- banner side image start -->
+            <img class="banner_right_thumb img_moving_anim1 position-absolute" src="/static/assets/images/banner/banner3.png"
+               alt="image_not_found">
+            <img class="banner_left_thumb img_moving_anim2 position-absolute" src="/static/assets/images/banner/banner4.png"
+               alt="image_not_found">
+            <!-- banner side image end -->
+         </section>
+         <!-- banner section end -->
+
+         
+         <!-- produce category section start -->
+         <section class="produce_category_section" data-aos="fade-up" data-aos-duration="2000">
+            <div class="container">
+               <div class="prdc_ctg_wrap mx-2">
+                  <div class="row">
+                     <div class="col-xl-4 px-md-0">
+                        <div class="prdc_ctg_content_wrap">
+                           <div class="prdc_ctg_content">
+                              <div class="prdc_ctg_sub_title d-flex align-items-center pb-2">
+                                 <i class="far fa-circle"></i>
+                                 <i class="far fa-circle"></i>
+                                 <i class="far fa-circle"></i>
+                                 <span class="ps-2">FRESH FROM OUR FARM</span>
+                              </div>
+                              <div class="prdc_ctg_title">
+                                 <h2>Fresh produce Categories</h2>
+                              </div>
+                              <div class="prdc_ctg_desc py-2">
+                                 <p>Apparently we had reached a great height in the atmosphere, for the sky was a</p>
+                              </div>
+                           </div>
+                           <div class="prdc_ctg_item_content">
+                              <ul class="product_tabnav_2 d-flex mt-3 nav nav-pills" id="pills-tab" role="tablist">
+
+                                 {% for category in categories %}
+                                 <li class="nav-item mt-2" role="presentation">
+                                    <a href="/?category={{category.id}}" >
+                                       <button
+                                          class="nav-link rounded-pill active d-flex justify-content-between align-items-center rounded-pill"
+                                          id="pills-vegetable-tab" data-bs-toggle="pill" data-bs-target="#{{category.title}}"
+                                          type="button" role="tab" aria-controls="pills-vegetable" aria-selected="true">
+                                          <div class="prdc_ctg_mixed d-flex justify-content-center align-items-center">
+                                             <div
+                                                class="prdc_ctg_icon d-flex justify-content-center align-items-center me-2">
+                                                <img src="{{category.imageURL}}" alt="image_not_found">
+                                             </div>
+                                             <div class="prdc_ctg_icon_title">
+                                                <h5>{{category.title}}</h5>
+                                             </div>
+                                          </div>
+                                          <div class="prdc_ctg_icon_num">
+                                             <span>{{category.product_set.all.count}}</span>
+                                          </div>
+                                       </button>
+                                    </a>
+                                 </li>
+                                 {% endfor %}
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="col-xl-8 px-0">
+                        <div class="tab-content" id="">
+                           <div class="tab-pane fade show active" id="" role="tabpanel"
+                              aria-labelledby="pills-vegetable-tab">
+                              <div class="prdc_ctg_product_wrap">
+                                 <div class="prdc_ctg_inner_product bg-white">
+                                    <div class="row">
+                                       {% if cat %}
+                                       {% for product in cat %}
+                                       <div class="col-6 col-lg-6">
+                                          <div
+                                             class="prdc_ctg_product_content d-flex justify-content-center align-items-center">
+                                             <div
+                                                class="prdc_ctg_product_img d-flex justify-content-center align-items-center me-3">
+                                               <a href="{% url 'product_detail' product.id  %}"> <img src="{{product.imageURL}}" alt="cat6"></a>
+                                             </div>
+                                             <div class="prdc_ctg_product_text">
+                                                <div class="prdc_ctg_product_badge mb-2">
+                                                   <span class="text-uppercase rounded-pill">{{product.category.title}}</span>
+                                                </div>
+                                                <div class="prdc_ctg_product_rating my-1 rating_wrap d-flex">
+                                                   <ul class="rating_star ul_li">
+                                                      <li class="active"><i class="fas fa-star"></i></li>
+                                                      <li class="active"><i class="fas fa-star"></i></li>
+                                                      <li class="active"><i class="fas fa-star"></i></li>
+                                                      <li class="active"><i class="fas fa-star"></i></li>
+                                                      <li><i class="far fa-star"></i></li>
+                                                   </ul>
+                                                   <span class="shop_review_text">( 4.0 )</span>
+                                                </div>
+                                                <div class="prdc_ctg_product_title my-2">
+                                                   <a href="{% url 'product_detail' product.id %}" target="_blank"><h5>{{product.name}} </h5></a>
+                                                </div>
+                                                <div class="prdc_ctg_product_price mt-1 product_price">
+                                                   <span class="sale_price pe-1">${{product.price_new}}</span>
+                                                   {% if product.price%}
+                                                   <del>${{product.price}}</del>
+                                                   {% endif %}
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       {% endfor %}
+                                       {% else %}
+                                       {% for product in products %}
+                                       <div class="col-6 col-lg-6">
+                                          <div
+                                             class="prdc_ctg_product_content d-flex justify-content-center align-items-center">
+                                             <div
+                                                class="prdc_ctg_product_img d-flex justify-content-center align-items-center me-3">
+                                               <a href="{% url 'product_detail' product.id  %}"> <img src="{{product.imageURL}}" alt="cat6"></a>
+                                             </div>
+                                             <div class="prdc_ctg_product_text">
+                                                <div class="prdc_ctg_product_badge mb-2">
+                                                   <span class="text-uppercase rounded-pill">{{product.category.title}}</span>
+                                                </div>
+                                                <div class="prdc_ctg_product_rating my-1 rating_wrap d-flex">
+                                                   <ul class="rating_star ul_li">
+                                                      <li class="active"><i class="fas fa-star"></i></li>
+                                                      <li class="active"><i class="fas fa-star"></i></li>
+                                                      <li class="active"><i class="fas fa-star"></i></li>
+                                                      <li class="active"><i class="fas fa-star"></i></li>
+                                                      <li><i class="far fa-star"></i></li>
+                                                   </ul>
+                                                   <span class="shop_review_text">( 4.0 )</span>
+                                                </div>
+                                                <div class="prdc_ctg_product_title my-2">
+                                                   <a href="{% url 'product_detail' product.id %}" target="_blank"><h5>{{product.name}} </h5></a>
+                                                </div>
+                                                <div class="prdc_ctg_product_price mt-1 product_price">
+                                                   <span class="sale_price pe-1">${{product.price_new}}</span>
+                                                   {% if product.price%}
+                                                   <del>${{product.price}}</del>
+                                                   {% endif %}
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       {% endfor %}
+                                       {% endif %}
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- produce category section end -->
+
+         {% endblock %}
+      </main>
+      <!-- main body end -->
+
+
+   </div>
+   <!-- body wrap end -->
+
+   <!-- Include jquery js -->
+   <script src="/static/assets/js/jquery.min.js"></script>
+
+   <!-- Include bootstrap-bundle js -->
+   <script src="/static/assets/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Include aos js -->
+   <script src="/static/assets/js/aos.js"></script>
+
+   <!-- Include jquery-magnific-popup js -->
+   <script src="/static/assets/js/magnific-popup.min.js"></script>
+
+   <!-- Include nice-select js -->
+   <script src="/static/assets/js/nice-select.min.js"></script>
+
+   <!-- Include jquery-countdown js -->
+   <script src="/static/assets/js/countdown.min.js"></script>
+
+   <!-- Include slick js -->
+   <script src="/static/assets/js/slick.min.js"></script>
+
+   <!-- Include custom js -->
+   <script src="/static/assets/js/custom.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+django-ckeditor==6.5.1
+django-jazzmin==2.6.0
+environs==9.5.0
+pip-chill==1.0.1
+psycopg2==2.9.5
+whitenoise==6.2.0
