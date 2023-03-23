@@ -10,6 +10,7 @@ Main Page
 Product Detail
 <img src="/media/img2.jpg">
 <hr>
+
 # Installation
 * 1 - clone repo https://github.com/magic-encode/UpTrader-MVP.git
 * 2 - create a virtual environment and activate
