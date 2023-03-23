@@ -4,3 +4,4 @@ environs==9.5.0
 pip-chill==1.0.1
 psycopg2==2.9.5
 whitenoise==6.2.0
+pillow
